@@ -1,57 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs runType="spark">
+    <statistic>
 
-<job>
-	<!--常规统计-->
-	<statistic>
-	<!--15min -->
-		<quarter>
-			<!--table是统计表，result是输出表 col是输出字段，flow是统计字段，group是聚合字段，func是统计方式-->
-			<table table="" result=""> 
-				<field col="" group="" func="sum">flow<field>
-				<field col="" group="" func="mean">flow<field>
-				<field col="" group="" func="max">flow<field>
-				<field col="" group="" func="min">flow<field>
-				<field col="" group="" func="count">flow<field>
-				<field col="" group="" func="variance">flow<field>
-			</table>
-			<table table="" result=""> 
-				<field col="" group="" func="sum">flow<field>
-				<field col="" group="" func="mean">flow<field>
-				<field col="" group="" func="max">flow<field>
-				<field col="" group="" func="min">flow<field>
-				<field col="" group="" func="count">flow<field>
-				<field col="" group="" func="variance">flow<field>
-			</table>
-		</quarter>
-		
-		<!--30min -->
-		<half>
-		
-		</half>
-		<!--1h -->
-		<hour>
-		
-		</hour>
-		
-		<!--morning peak  早高峰-->
-		<mp>
-		
-		</mp>
-		<!--evening peak  晚高峰-->
-		<ep>
-		
-		</ep>
-		<!--24小时-->
-		<day>
-		
-		</day>
-		<!--白天-->
-		<daytime>
-		
-		</daytime>
-		<!--夜晚-->
-		<night>
-		
-		</night>
+        <!--15min -->
+        <quarter>
+            <job>
+                <config ref="">
+                    <property key="" value=""></property>
+                </config>
+                <!--table是统计表，result是输出表 col是输出字段，flow是统计字段，group是聚合字段，func是统计方式-->
+                <table table="" result="">
+                    <field col="" group="" func="sum">flow
+                    <field>
+                    <field col="" group="" func="mean">flow
+                    <field>
+                    <field col="" group="" func="max">flow
+                    <field>
+                    <field col="" group="" func="min">flow
+                    <field>
+                    <field col="" group="" func="count">flow
+                    <field>
+                    <field col="" group="" func="variance">flow
+                    <field>
+                </table>
+            </job>
+            <table table="" result="">
+                <field col="" group="" func="sum">flow
+                <field>
+                <field col="" group="" func="mean">flow
+                <field>
+                <field col="" group="" func="max">flow
+                <field>
+                <field col="" group="" func="min">flow
+                <field>
+                <field col="" group="" func="count">flow
+                <field>
+                <field col="" group="" func="variance">flow
+                <field>
+            </table>
+        </quarter>
 
-	</statistic>
-</job>
+        <!--30min -->
+        <half>
+
+        </half>
+        <!--1h -->
+        <hour>
+
+        </hour>
+
+        <!--morning peak  早高峰-->
+        <mp>
+
+        </mp>
+        <!--evening peak  晚高峰-->
+        <ep>
+
+        </ep>
+        <!--24小时-->
+        <day>
+
+        </day>
+        <!--白天-->
+        <daytime>
+
+        </daytime>
+        <!--夜晚-->
+        <night>
+
+        </night>
+    </statistic>
+    <nostatistic>
+        <job>
+            <input table="info_road" sql="select * from info_road">
+                <field col="" type="int" default=""></field>
+                <field col="ROAD_CODE" type="string" default=""></field>
+            </input>
+            <steps>
+                <step order="1" func="" action="">
+
+                </step>
+                <step order="2" func="" action="" porder="1">
+
+                </step>
+            </steps>
+            <output table="">
+                <field col=""></field>
+            </output>
+
+        </job>
+    </nostatistic>
+</jobs>

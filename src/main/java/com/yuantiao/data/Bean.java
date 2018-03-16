@@ -1,4 +1,6 @@
 package com.yuantiao.data;
 
-public interface Bean {
+import java.io.Serializable;
+
+public interface Bean extends Serializable{
 }
